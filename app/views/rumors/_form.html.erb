@@ -1,0 +1,27 @@
+<%= form_with(model: rumor, local: true) do |form| %>
+  <% if rumor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rumor.errors.count, "error") %> prohibited this rumor from being saved:</h2>
+
+      <ul>
+      <% rumor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
