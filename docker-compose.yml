@@ -1,13 +1,20 @@
-app:
-  build: .
-  volumes:
-    - .:/app
-  ports:
-    - "3000:3000"
-  links:
-    - postgres
+version: "3"
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    links:
+      - postgres
 
-postgres:
-  image: postgres:9.4
-  ports:
-    - "5432"
+  postgres:
+    image: postgres:9.4
+    ports:
+      - "5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
