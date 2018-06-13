@@ -1,0 +1,2 @@
+class Fibble < ApplicationRecord
+end

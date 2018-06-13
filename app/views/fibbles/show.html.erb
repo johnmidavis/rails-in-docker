@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fibble.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @fibble.body %>
+</p>
+
+<%= link_to 'Edit', edit_fibble_path(@fibble) %> |
+<%= link_to 'Back', fibbles_path %>
